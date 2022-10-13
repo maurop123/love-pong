@@ -13,6 +13,7 @@ WINDOW_HEIGHT = 720
 VIRTUAL_WIDTH = 432
 VIRTUAL_HEIGHT = 243
 
+SCORE = 0
 
 --[[ Love functions ]]
 
@@ -83,9 +84,17 @@ function love.update(dt)
 
     --collision detection
     if ball:collides(player1) or ball:collides(player2) then
+      SCORE = SCORE + 1
 
       -- x direction
       ball.dx = -ball.dx * 1.03     
+
+      -- fix multi collission
+      if ball.dx < 0 then
+        ball.x = ball.x - 5
+      else
+        ball.x = ball.x + 4
+      end
 
       --y direction
       if ball.dy < 0 then
@@ -116,7 +125,7 @@ function love.keypressed(key)
       gameState = 'play'
     else
       gameState = 'start'
-
+      SCORE = 0
       ball:reset()
     end
   end
@@ -128,7 +137,8 @@ end
 function displayFPS()
   love.graphics.setFont(smallFont)
   love.graphics.setColor(0, 255, 0, 255)
-  love.graphics.print('FPS: ' .. tostring(love.timer.getFPS()), 10, 10)
+  --love.graphics.print('FPS: ' .. tostring(love.timer.getFPS()), 10, 10)
+  love.graphics.print('Volleys: ' .. tostring(SCORE), 10, 10)
   --love.graphics.print(type(ball.x), 20, 20)
   --love.graphics.print(tostring(ball.x) .. tostring(ball.width) .. tostring(player1.x) .. tostring(player1.width), 20, 20)
 end
