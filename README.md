@@ -1,6 +1,8 @@
 # Pong
 A remake of the classic game Pong made using Love, written in Lua
 
+![game preview](https://github.com/maurop123/pong/blob/master/pong_preview.png)
+
 ## Init
 
 1. Install [LÖVE](https://love2d.org/#download) (the 2D game prototyping engine)
