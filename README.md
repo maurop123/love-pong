@@ -1,10 +1,10 @@
-# love-pong
-Pong game made with Love in Lua
+# Pong
+A remake of the classic game Pong made using Love, written in Lua
 
 ## Init
 
 1. Install [LÖVE](https://love2d.org/#download) (the 2D game prototyping engine)
-2. Clone this repo
+2. Clone this repo using `git clone https://github.com/maurop123/pong.git`
 3. From just outside the repo's folder, run `love pong`
 
 ## Controls
