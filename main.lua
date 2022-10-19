@@ -87,7 +87,7 @@ function love.update(dt)
       SCORE = SCORE + 1
 
       -- x direction
-      ball.dx = -ball.dx * 1.03     
+      ball.dx = -ball.dx * 1.10
 
       -- fix multi collission
       if ball.dx < 0 then
